@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="t d">
+  <title id="t">凤凰兵器骑行 · 十八般武艺</title>
+  <desc id="d">一只火凤凰骑着自行车、耍十八般兵刃的零依赖单文件网页游戏。四模式乘四画风，程序化国风音频，双击即玩。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#201712"/><stop offset="1" stop-color="#130e0a"/>
+    </linearGradient>
+    <linearGradient id="tail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e86a3f"/><stop offset="1" stop-color="#c23a2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" rx="26" fill="url(#bg)"/>
+  <!-- 远山淡影（墨色） -->
+  <path d="M0 290 Q 90 250 170 288 T 360 288 T 560 288 T 760 288 T 1200 300 L1200 360 L0 360 Z" fill="#241a14" opacity="0.55"/>
+  <path d="M0 316 Q 140 282 260 314 T 520 314 T 800 314 T 1200 326 L1200 360 L0 360 Z" fill="#1a120d" opacity="0.6"/>
+  <!-- 朱印 -->
+  <g id="seal">
+    <rect x="48" y="50" width="56" height="56" rx="9" fill="#c23a2b"/>
+    <rect x="52" y="54" width="48" height="48" rx="6" fill="none" stroke="#f4ecd9" stroke-opacity="0.55" stroke-width="1.5"/>
+    <text x="76" y="89" font-size="37" text-anchor="middle" fill="#f4ecd9" font-family="sans-serif">武</text>
+  </g>
+  <!-- 标题 -->
+  <g id="title-block">
+    <text x="124" y="88" font-size="47" fill="#e8c95a" font-family="sans-serif">凤凰兵器骑行</text>
+    <text x="128" y="126" font-size="23" fill="#f0e6d0" font-family="sans-serif">十八般武艺 · 一页总览</text>
+    <text x="128" y="158" font-size="16.5" fill="#b6a381" font-family="sans-serif">一只火凤凰，骑着自行车，耍十八般兵刃。零依赖 · 单文件 · 双击即玩。</text>
+  </g>
+  <!-- 风格四色点 -->
+  <g id="style-dots">
+    <circle cx="132" cy="180" r="7" fill="#c23a2b"/>
+    <circle cx="158" cy="180" r="7" fill="#f0a030"/>
+    <circle cx="184" cy="180" r="7" fill="#8ad17a"/>
+    <circle cx="210" cy="180" r="7" fill="#7a3aff"/>
+    <text x="228" y="185" font-size="13" fill="#8a7a5f" font-family="sans-serif">水墨 · 像素 · 卡通 · 霓虹</text>
+  </g>
+  <!-- 凤凰 + 自行车（右侧） -->
+  <g id="phoenix">
+    <!-- 尾羽（三道朱红流线） -->
+    <path d="M842 150 C 806 176 780 224 766 262 C 800 244 826 208 838 176 Z" fill="url(#tail)" opacity="0.92"/>
+    <path d="M862 160 C 834 186 814 228 806 262 C 838 244 858 210 866 182 Z" fill="#c23a2b" opacity="0.85"/>
+    <path d="M880 170 C 862 196 852 232 850 258 C 878 244 890 214 894 192 Z" fill="#e86a3f" opacity="0.75"/>
+    <!-- 身体 -->
+    <ellipse cx="906" cy="168" rx="42" ry="38" fill="#c23a2b"/>
+    <ellipse cx="914" cy="162" rx="30" ry="26" fill="#e86a3f" opacity="0.55"/>
+    <!-- 翅膀 -->
+    <path d="M904 146 C 918 118 948 96 972 94 C 966 128 948 150 916 160 Z" fill="#8f1f1a"/>
+    <path d="M906 150 C 916 126 938 110 958 108 C 952 134 936 150 914 158 Z" fill="#c23a2b"/>
+    <!-- 颈 + 头 -->
+    <path d="M928 150 C 948 140 962 126 970 116 C 966 136 952 150 934 158 Z" fill="#c23a2b"/>
+    <circle cx="976" cy="110" r="17" fill="#c23a2b"/>
+    <!-- 头冠 -->
+    <path d="M966 96 C 960 82 962 70 970 62 C 972 76 976 88 980 94 Z" fill="#e86a3f"/>
+    <path d="M978 92 C 984 78 992 70 1002 66 C 998 82 992 92 986 98 Z" fill="#f0a030"/>
+    <!-- 喙 -->
+    <path d="M990 108 L1012 106 L990 114 Z" fill="#f0a030"/>
+    <!-- 眼 -->
+    <circle cx="982" cy="106" r="2.6" fill="#130e0a"/>
+    <!-- 后轮 -->
+    <circle cx="842" cy="252" r="34" fill="none" stroke="#e8c95a" stroke-width="5"/>
+    <circle cx="842" cy="252" r="6" fill="#e8c95a"/>
+    <g id="wheel-rear" stroke="#e8c95a" stroke-width="2.5" opacity="0.85">
+      <line x1="842" y1="218" x2="842" y2="286"/>
+      <line x1="808" y1="252" x2="876" y2="252"/>
+      <line x1="818" y1="228" x2="866" y2="276"/>
+      <line x1="866" y1="228" x2="818" y2="276"/>
+    </g>
+    <!-- 前轮 -->
+    <circle cx="1010" cy="252" r="34" fill="none" stroke="#e8c95a" stroke-width="5"/>
+    <circle cx="1010" cy="252" r="6" fill="#e8c95a"/>
+    <g id="wheel-front" stroke="#e8c95a" stroke-width="2.5" opacity="0.85">
+      <line x1="1010" y1="218" x2="1010" y2="286"/>
+      <line x1="976" y1="252" x2="1044" y2="252"/>
+      <line x1="986" y1="228" x2="1034" y2="276"/>
+      <line x1="1034" y1="228" x2="986" y2="276"/>
+    </g>
+    <!-- 车架 -->
+    <g stroke="#b8863f" stroke-width="6" fill="none" stroke-linecap="round">
+      <line x1="842" y1="252" x2="884" y2="196"/>
+      <line x1="884" y1="196" x2="948" y2="208"/>
+      <line x1="948" y1="208" x2="1010" y2="252"/>
+      <line x1="884" y1="196" x2="862" y2="252"/>
+      <line x1="892" y1="214" x2="1010" y2="252"/>
+    </g>
+    <!-- 车把 -->
+    <line x1="948" y1="208" x2="952" y2="178" stroke="#b8863f" stroke-width="6" stroke-linecap="round"/>
+    <line x1="938" y1="174" x2="966" y2="174" stroke="#b8863f" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- 底部能力条 -->
+  <g id="meta">
+    <rect x="48" y="296" rx="14" width="1104" height="42" fill="#1a120d"/>
+    <g font-family="sans-serif" font-size="15" fill="#d9cdb4">
+      <text x="72" y="322"><tspan fill="#e8c95a">18</tspan> 件独立兵器</text>
+      <text x="220" y="322"><tspan fill="#e8c95a">4</tspan> 模式 <tspan fill="#e8c95a">× 4</tspan> 画风</text>
+      <text x="388" y="322">程序化国风音频</text>
+      <text x="560" y="322">本地存储 · 无网络</text>
+      <text x="736" y="322"><tspan fill="#e8c95a">25</tspan> 项 e2e 测试</text>
+      <text x="906" y="322"><tspan fill="#c23a2b">零依赖</tspan> · 双击即玩</text>
+    </g>
+  </g>
+</svg>

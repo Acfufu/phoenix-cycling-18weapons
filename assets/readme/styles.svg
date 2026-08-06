@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="t d">
+  <title id="t">四套画风 · 同一内核换皮</title>
+  <desc id="d">水墨、像素、卡通、霓虹四套渲染器共享同一渲染门面与游戏内核。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1712"/><stop offset="1" stop-color="#130e0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="250" rx="22" fill="url(#bg)"/>
+  <text x="48" y="52" font-size="27" fill="#e8c95a" font-family="sans-serif">四套画风 · 同一个内核</text>
+  <g font-family="sans-serif" fill="#d9cdb4">
+    <g>
+      <rect x="48" y="78" width="258" height="132" rx="14" fill="#1a120d"/>
+      <text x="66" y="110" font-size="20" fill="#f4ecd9" font-family="sans-serif">水墨</text>
+      <g>
+        <rect x="66" y="122" width="34" height="22" rx="5" fill="#f4ecd9"/><rect x="102" y="122" width="34" height="22" rx="5" fill="#e3d4b3"/><rect x="138" y="122" width="34" height="22" rx="5" fill="#c23a2b"/><rect x="174" y="122" width="34" height="22" rx="5" fill="#2b211a"/><rect x="210" y="122" width="34" height="22" rx="5" fill="#8c7a5f"/>
+      </g>
+      <text x="66" y="172" font-size="14" fill="#b6a381">宣纸纹理 · 墨滴晕染</text>
+      <text x="66" y="194" font-size="14" fill="#b6a381">飞白笔触 · 朱红点缀</text>
+    </g>
+    <g>
+      <rect x="318" y="78" width="258" height="132" rx="14" fill="#1a120d"/>
+      <text x="336" y="110" font-size="20" fill="#f4ecd9" font-family="sans-serif">像素</text>
+      <g>
+        <rect x="336" y="122" width="34" height="22" rx="5" fill="#1a1033"/><rect x="372" y="122" width="34" height="22" rx="5" fill="#f0544f"/><rect x="408" y="122" width="34" height="22" rx="5" fill="#ffe08a"/><rect x="444" y="122" width="34" height="22" rx="5" fill="#e6e1ec"/><rect x="480" y="122" width="34" height="22" rx="5" fill="#6a5a7a"/>
+      </g>
+      <text x="336" y="172" font-size="14" fill="#b6a381">低分辨率离屏缓冲</text>
+      <text x="336" y="194" font-size="14" fill="#b6a381">整数放大 · 真像素风</text>
+    </g>
+    <g>
+      <rect x="588" y="78" width="258" height="132" rx="14" fill="#1a120d"/>
+      <text x="606" y="110" font-size="20" fill="#f4ecd9" font-family="sans-serif">卡通</text>
+      <g>
+        <rect x="606" y="122" width="34" height="22" rx="5" fill="#aee3ff"/><rect x="642" y="122" width="34" height="22" rx="5" fill="#ff5a3c"/><rect x="678" y="122" width="34" height="22" rx="5" fill="#ffd24a"/><rect x="714" y="122" width="34" height="22" rx="5" fill="#79c95b"/><rect x="750" y="122" width="34" height="22" rx="5" fill="#5a4a6a"/>
+      </g>
+      <text x="606" y="172" font-size="14" fill="#b6a381">扁平描边 · 亮色平涂</text>
+      <text x="606" y="194" font-size="14" fill="#b6a381">圆润造型 · 明快可爱</text>
+    </g>
+    <g>
+      <rect x="858" y="78" width="294" height="132" rx="14" fill="#1a120d"/>
+      <text x="876" y="110" font-size="20" fill="#f4ecd9" font-family="sans-serif">霓虹</text>
+      <g>
+        <rect x="876" y="122" width="34" height="22" rx="5" fill="#05020a"/><rect x="912" y="122" width="34" height="22" rx="5" fill="#ff2fd6"/><rect x="948" y="122" width="34" height="22" rx="5" fill="#00f0ff"/><rect x="984" y="122" width="34" height="22" rx="5" fill="#00ff9d"/><rect x="1020" y="122" width="34" height="22" rx="5" fill="#7a3aff"/>
+      </g>
+      <text x="876" y="172" font-size="14" fill="#b6a381">暗底发光 · 扫描线</text>
+      <text x="876" y="194" font-size="14" fill="#b6a381">赛博霓虹 · 暗角晕染</text>
+    </g>
+  </g>
+</svg>

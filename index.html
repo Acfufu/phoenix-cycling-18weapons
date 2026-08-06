@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>凤凰兵器骑行 · 十八般武艺</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐉</text></svg>">
+<link rel="stylesheet" href="css/style.css?v=11">
+</head>
+<body>
+<div id="app">
+  <canvas id="game"></canvas>
+
+  <!-- 统一审查 Hub 入口 -->
+  <div id="hub" class="hub"></div>
+
+  <div id="hud" class="hud"></div>
+</div>
+
+<!-- 依赖顺序：utils → input → audio → particles → weapons → entities → render → modes → engine → main -->
+<script src="js/core/utils.js?v=11"></script>
+<script src="js/core/input.js?v=11"></script>
+<script src="js/core/audio.js?v=11"></script>
+<script src="js/core/particles.js?v=11"></script>
+<script src="js/weapons/weapons.js?v=11"></script>
+<script src="js/entities/player.js?v=11"></script>
+<script src="js/entities/enemies.js?v=11"></script>
+<script src="js/entities/projectiles.js?v=11"></script>
+<script src="js/render/index.js?v=11"></script>
+<script src="js/render/base.js?v=11"></script>
+<script src="js/render/ink.js?v=11"></script>
+<script src="js/render/pixel.js?v=11"></script>
+<script src="js/render/cartoon.js?v=11"></script>
+<script src="js/render/neon.js?v=11"></script>
+<script src="js/render/weaponDraw.js?v=11"></script>
+<script src="js/modes/index.js?v=11"></script>
+<script src="js/modes/story.js?v=11"></script>
+<script src="js/modes/endless.js?v=11"></script>
+<script src="js/modes/gallery.js?v=11"></script>
+<script src="js/modes/battle.js?v=11"></script>
+<script src="js/core/combat.js?v=11"></script>
+<script src="js/core/world.js?v=11"></script>
+<script src="js/core/draw.js?v=11"></script>
+<script src="js/core/engine.js?v=11"></script>
+<script src="js/main.js?v=11"></script>
+</body>
+</html>

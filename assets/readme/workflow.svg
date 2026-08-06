@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="t d">
+  <title id="t">架构：单一文件，一整个游戏</title>
+  <desc id="d">游戏逻辑通过渲染门面 R 的语义图元绘制，四套渲染器各自解释；全部内联进一个 index.html 单文件。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1712"/><stop offset="1" stop-color="#130e0a"/>
+    </linearGradient>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#e8c95a"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="380" rx="22" fill="url(#bg)"/>
+  <text x="48" y="52" font-size="28" fill="#e8c95a" font-family="sans-serif">架构 · 一文件，一游戏</text>
+  <text x="48" y="80" font-size="15" fill="#b6a381" font-family="sans-serif">核心逻辑与渲染完全解耦：语义图元一门面，四套画风各自解释。</text>
+
+  <!-- 列 1：游戏逻辑 -->
+  <g font-family="sans-serif" font-size="16" fill="#d9cdb4">
+    <rect x="48" y="106" width="300" height="196" rx="14" fill="#1a120d"/>
+    <text x="74" y="138" font-size="19" fill="#e8c95a" font-family="sans-serif">游戏逻辑</text>
+    <g>
+      <rect x="74" y="154" width="248" height="34" rx="8" fill="#241a14"/><text x="88" y="177">十八般兵器 · 独立招式</text>
+      <rect x="74" y="196" width="248" height="34" rx="8" fill="#241a14"/><text x="88" y="219">四种模式 · 闯关 / 跑酷 / 演示 / 对战</text>
+      <rect x="74" y="238" width="248" height="34" rx="8" fill="#241a14"/><text x="88" y="261">实体 · 战斗 · 程序化音频</text>
+    </g>
+  </g>
+  <line x1="356" y1="204" x2="392" y2="204" stroke="#e8c95a" stroke-width="3" marker-end="url(#arw)"/>
+
+  <!-- 列 2：渲染门面 -->
+  <g font-family="sans-serif" font-size="16" fill="#d9cdb4">
+    <rect x="404" y="106" width="300" height="196" rx="14" fill="#1a120d"/>
+    <text x="430" y="138" font-size="19" fill="#e8c95a" font-family="sans-serif">渲染门面 R</text>
+    <g>
+      <rect x="430" y="154" width="248" height="34" rx="8" fill="#2a1f16"/><text x="444" y="177">R.circle · R.line · R.quad</text>
+      <rect x="430" y="196" width="248" height="34" rx="8" fill="#2a1f16"/><text x="444" y="219">语义色键（phoenix / fire / ink…）</text>
+      <rect x="430" y="238" width="248" height="34" rx="8" fill="#2a1f16"/><text x="444" y="261">实体只画图元，不关心画风</text>
+    </g>
+  </g>
+  <line x1="712" y1="204" x2="748" y2="204" stroke="#e8c95a" stroke-width="3" marker-end="url(#arw)"/>
+
+  <!-- 列 3：四套渲染器 -->
+  <g font-family="sans-serif" font-size="15" fill="#d9cdb4">
+    <rect x="760" y="106" width="392" height="196" rx="14" fill="#1a120d"/>
+    <text x="786" y="138" font-size="19" fill="#e8c95a" font-family="sans-serif">四套画风</text>
+    <rect x="786" y="152" width="172" height="64" rx="10" fill="#c23a2b"/>
+    <text x="810" y="192" font-size="20" fill="#f4ecd9" font-family="sans-serif">水墨</text>
+    <rect x="966" y="152" width="172" height="64" rx="10" fill="#f0a030"/>
+    <text x="990" y="192" font-size="20" fill="#241a14" font-family="sans-serif">像素</text>
+    <rect x="786" y="224" width="172" height="64" rx="10" fill="#8ad17a"/>
+    <text x="810" y="264" font-size="20" fill="#241a14" font-family="sans-serif">卡通</text>
+    <rect x="966" y="224" width="172" height="64" rx="10" fill="#7a3aff"/>
+    <text x="990" y="264" font-size="20" fill="#f4ecd9" font-family="sans-serif">霓虹</text>
+  </g>
+
+  <!-- 底部：多文件源码 → 单文件产物 -->
+  <g>
+    <rect x="48" y="320" width="1104" height="40" rx="12" fill="#3a2417"/>
+    <text x="72" y="346" font-size="17" fill="#f4ecd9" font-family="sans-serif">源码多文件模块化 · npm run build:single 产出单文件 dist/index.html</text>
+    <rect x="930" y="326" width="208" height="28" rx="8" fill="#c23a2b"/>
+    <text x="1034" y="346" font-size="15" fill="#f4ecd9" text-anchor="middle" font-family="sans-serif">单文件产物 · 双击即玩</text>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="t d">
+  <title id="t">十八般兵器</title>
+  <desc id="d">刀枪剑戟 斧钺钩叉 镋棍槊棒 鞭锏锤挝 拐子流星锤。每件独立招式与手感。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1712"/><stop offset="1" stop-color="#130e0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" rx="22" fill="url(#bg)"/>
+  <text x="48" y="52" font-size="27" fill="#e8c95a" font-family="sans-serif">十八般兵器 · 每件独立招式</text>
+  <text x="48" y="80" font-size="15" fill="#b6a381" font-family="sans-serif">刀枪剑戟 斧钺钩叉 镋棍槊棒 鞭锏锤挝 拐子流星锤</text>
+  <g font-family="sans-serif">
+    <g font-family="sans-serif">
+      <g><rect x="72" y="102" width="56" height="56" rx="8" fill="#3a2417"/><text x="100" y="142" font-size="32" fill="#e8c95a" text-anchor="middle">刀</text><text x="100" y="180" font-size="14" fill="#d9cdb4" text-anchor="middle">劈山刀</text></g>
+      <g><rect x="272" y="102" width="56" height="56" rx="8" fill="#3a2417"/><text x="300" y="142" font-size="32" fill="#e8c95a" text-anchor="middle">枪</text><text x="300" y="180" font-size="14" fill="#d9cdb4" text-anchor="middle">百鸟朝凤</text></g>
+      <g><rect x="472" y="102" width="56" height="56" rx="8" fill="#3a2417"/><text x="500" y="142" font-size="32" fill="#e8c95a" text-anchor="middle">剑</text><text x="500" y="180" font-size="14" fill="#d9cdb4" text-anchor="middle">白虹贯日</text></g>
+      <g><rect x="672" y="102" width="56" height="56" rx="8" fill="#3a2417"/><text x="700" y="142" font-size="32" fill="#e8c95a" text-anchor="middle">戟</text><text x="700" y="180" font-size="14" fill="#d9cdb4" text-anchor="middle">方天画戟</text></g>
+      <g><rect x="872" y="102" width="56" height="56" rx="8" fill="#3a2417"/><text x="900" y="142" font-size="32" fill="#e8c95a" text-anchor="middle">斧</text><text x="900" y="180" font-size="14" fill="#d9cdb4" text-anchor="middle">开山斧</text></g>
+      <g><rect x="1072" y="102" width="56" height="56" rx="8" fill="#3a2417"/><text x="1100" y="142" font-size="32" fill="#e8c95a" text-anchor="middle">钺</text><text x="1100" y="180" font-size="14" fill="#d9cdb4" text-anchor="middle">日月钺</text></g>
+      <g><rect x="72" y="206" width="56" height="56" rx="8" fill="#3a2417"/><text x="100" y="246" font-size="32" fill="#e8c95a" text-anchor="middle">钩</text><text x="100" y="284" font-size="14" fill="#d9cdb4" text-anchor="middle">银钩铁划</text></g>
+      <g><rect x="272" y="206" width="56" height="56" rx="8" fill="#3a2417"/><text x="300" y="246" font-size="32" fill="#e8c95a" text-anchor="middle">叉</text><text x="300" y="284" font-size="14" fill="#d9cdb4" text-anchor="middle">三股托天叉</text></g>
+      <g><rect x="472" y="206" width="56" height="56" rx="8" fill="#3a2417"/><text x="500" y="246" font-size="32" fill="#e8c95a" text-anchor="middle">镋</text><text x="500" y="284" font-size="14" fill="#d9cdb4" text-anchor="middle">凤翅镏金镋</text></g>
+      <g><rect x="672" y="206" width="56" height="56" rx="8" fill="#3a2417"/><text x="700" y="246" font-size="32" fill="#e8c95a" text-anchor="middle">棍</text><text x="700" y="284" font-size="14" fill="#d9cdb4" text-anchor="middle">齐眉棍</text></g>
+      <g><rect x="872" y="206" width="56" height="56" rx="8" fill="#3a2417"/><text x="900" y="246" font-size="32" fill="#e8c95a" text-anchor="middle">槊</text><text x="900" y="284" font-size="14" fill="#d9cdb4" text-anchor="middle">马槊</text></g>
+      <g><rect x="1072" y="206" width="56" height="56" rx="8" fill="#3a2417"/><text x="1100" y="246" font-size="32" fill="#e8c95a" text-anchor="middle">棒</text><text x="1100" y="284" font-size="14" fill="#d9cdb4" text-anchor="middle">打狗棒</text></g>
+      <g><rect x="72" y="310" width="56" height="56" rx="8" fill="#3a2417"/><text x="100" y="350" font-size="32" fill="#e8c95a" text-anchor="middle">鞭</text><text x="100" y="388" font-size="14" fill="#d9cdb4" text-anchor="middle">九节鞭</text></g>
+      <g><rect x="272" y="310" width="56" height="56" rx="8" fill="#3a2417"/><text x="300" y="350" font-size="32" fill="#e8c95a" text-anchor="middle">锏</text><text x="300" y="388" font-size="14" fill="#d9cdb4" text-anchor="middle">四棱金锏</text></g>
+      <g><rect x="472" y="310" width="56" height="56" rx="8" fill="#3a2417"/><text x="500" y="350" font-size="32" fill="#e8c95a" text-anchor="middle">锤</text><text x="500" y="388" font-size="14" fill="#d9cdb4" text-anchor="middle">擂鼓瓮金锤</text></g>
+      <g><rect x="672" y="310" width="56" height="56" rx="8" fill="#3a2417"/><text x="700" y="350" font-size="32" fill="#e8c95a" text-anchor="middle">挝</text><text x="700" y="388" font-size="14" fill="#d9cdb4" text-anchor="middle">挝拐</text></g>
+      <g><rect x="872" y="310" width="56" height="56" rx="8" fill="#3a2417"/><text x="900" y="350" font-size="32" fill="#e8c95a" text-anchor="middle">拐</text><text x="900" y="388" font-size="14" fill="#d9cdb4" text-anchor="middle">鸳鸯拐</text></g>
+      <g><rect x="1072" y="310" width="56" height="56" rx="8" fill="#c23a2b"/><text x="1100" y="350" font-size="32" fill="#f4ecd9" text-anchor="middle">流</text><text x="1100" y="388" font-size="14" fill="#d9cdb4" text-anchor="middle">流星锤</text></g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "name": "phoenix-cycling-18weapons",
+  "version": "1.0.0",
+  "private": true,
+  "description": "凤凰兵器骑行 · 十八般武艺 — 零依赖网页小游戏",
+  "scripts": {
+    "serve": "python3 -m http.server 8177",
+    "build:single": "node scripts/build-single.js",
+    "verify:dist": "node scripts/verify-dist.js",
+    "test": "npm run test:types && npm run test:smoke && npm run test:e2e",
+    "test:types": "tsc --noEmit",
+    "test:smoke": "node scripts/smoke.js",
+    "test:e2e": "node scripts/build-single.js && playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "typescript": "^7.0.2"
+  }
+}

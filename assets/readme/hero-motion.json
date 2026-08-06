@@ -1,0 +1,16 @@
+{
+  "width": 1200,
+  "fps": 30,
+  "duration": 5.0,
+  "colors": 256,
+  "dither": "none",
+  "clip_to_base_alpha": true,
+  "max_size_mb": 2.0,
+  "reveals": [
+    {"id": "seal", "axis": "y", "start": 0.08, "end": 0.6, "exit": {"start": 4.1, "end": 4.85}},
+    {"id": "title-block", "axis": "x", "start": 0.18, "end": 1.0, "exit": {"start": 4.15, "end": 4.9}},
+    {"id": "style-dots", "axis": "x", "start": 0.3, "end": 1.1, "exit": {"start": 4.15, "end": 4.9}},
+    {"id": "phoenix", "axis": "x", "start": 0.55, "end": 1.45, "exit": {"start": 4.1, "end": 4.85}},
+    {"id": "meta", "axis": "y", "start": 1.05, "end": 1.7, "exit": {"start": 4.2, "end": 4.95}}
+  ]
+}

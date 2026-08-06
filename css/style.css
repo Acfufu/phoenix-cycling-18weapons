@@ -1,0 +1,398 @@
+/* =========================================================
+   凤凰兵器骑行 · 设计系统 v2「武阁」
+   水墨 + 朱印 + 鎏金 · 编辑式不对称构图
+   圆角体系：面板 10px / 印章钮 4px / 药丸 999px
+   单一强调色：朱红 #c23a2b（交互/印记）；鎏金 #e8c95a（标题/权威）
+   ========================================================= */
+:root {
+  --ink-900: #16100c;
+  --ink-800: #1f1712;
+  --ink-700: #2b211a;
+  --ink-600: #3a2e25;
+  --paper: #f4ecd9;
+  --paper-dim: rgba(244, 236, 217, 0.6);
+  --ui-text: #f0e6d0;
+  --ui-dim: rgba(240, 230, 208, 0.5);
+  --vermilion: #c23a2b;
+  --vermilion-deep: #8f1f1a;
+  --vermilion-soft: rgba(194, 58, 43, 0.14);
+  --gold: #e8c95a;
+  --gold-soft: rgba(232, 201, 90, 0.3);
+  --gold-hairline: rgba(232, 201, 90, 0.26);
+  --font-display: "Kaiti SC", "STKaiti", "KaiTi", "Noto Serif SC", serif;
+  --font-ui: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  --font-num: "Menlo", "Consolas", "Courier New", monospace;
+  --radius-panel: 10px;
+  --radius-seal: 4px;
+  --radius-chip: 999px;
+  --shadow-panel: 0 18px 46px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(232, 201, 90, 0.14) inset;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+
+body {
+  font-family: var(--font-ui);
+  background: var(--ink-900);
+  color: var(--ui-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app { position: relative; width: 100%; height: 100%; }
+#game { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* ================= 通用：印章按钮 ================= */
+.seal-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 9px 16px;
+  font-family: var(--font-display);
+  font-size: 15px; letter-spacing: 0.18em;
+  color: var(--paper);
+  background: rgba(22, 16, 12, 0.55);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius-seal);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  user-select: none;
+}
+.seal-btn:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+.seal-btn:active { transform: translateY(0) scale(0.97); }
+.seal-btn.active {
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+  color: var(--paper);
+  box-shadow: inset 0 0 0 1px rgba(244, 236, 217, 0.55), 0 4px 16px rgba(194, 58, 43, 0.45);
+}
+.seal-btn em { font-style: normal; font-size: 10px; letter-spacing: 0.08em; color: inherit; opacity: 0.75; }
+
+/* 区块小标签（画风 / 兵器），最多每行一处 */
+.lbl {
+  font-family: var(--font-display);
+  font-size: 13px; letter-spacing: 0.28em;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* ================= Hub 总布局 =================
+   不对称：上标题 / 左兵器榜 / 下兵器廊 / 右留白给凤凰 */
+.hub {
+  position: absolute; inset: 0; z-index: 20;
+  display: none;
+  flex-direction: column;
+  padding: 0 26px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(16, 10, 8, 0.6) 0%, rgba(16, 10, 8, 0.25) 42%, rgba(16, 10, 8, 0) 62%),
+    linear-gradient(0deg, rgba(16, 10, 8, 0.55) 0%, rgba(16, 10, 8, 0) 34%);
+}
+.hub.show { animation: hubIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes hubIn { from { opacity: 0; } to { opacity: 1; } }
+.hub > * { pointer-events: auto; }
+
+/* ---- 顶栏 ---- */
+.hub-top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 2px 0;
+  animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hub-wordmark { display: flex; align-items: center; gap: 14px; }
+.wordmark-seal {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px;
+  font-family: var(--font-display); font-size: 24px;
+  color: var(--paper);
+  background: var(--vermilion);
+  border-radius: var(--radius-seal);
+  box-shadow: inset 0 0 0 2px rgba(244, 236, 217, 0.35), 0 4px 14px rgba(194, 58, 43, 0.4);
+}
+.hub-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.4vw, 36px);
+  font-weight: 700; letter-spacing: 0.16em;
+  color: var(--gold);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45), 0 0 22px rgba(232, 201, 90, 0.18);
+}
+.hub-sub { margin-top: 3px; font-family: var(--font-display); font-size: 13px; letter-spacing: 0.24em; color: var(--ui-dim); }
+.hub-top-actions { display: flex; align-items: center; gap: 10px; }
+.style-row { display: flex; align-items: center; gap: 8px; margin-right: 6px; padding-right: 12px; border-right: 1px solid var(--gold-hairline); }
+
+/* ---- 中部：兵器榜（左） ---- */
+.hub-mid {
+  flex: 1;
+  display: flex; align-items: center;
+  padding-left: 3.5vw;
+}
+.mode-list { display: flex; flex-direction: column; gap: 11px; width: min(400px, 42vw); }
+.mode-card {
+  position: relative;
+  display: flex; align-items: center; gap: 16px;
+  padding: 13px 16px;
+  text-align: left;
+  background: linear-gradient(115deg, rgba(30, 21, 15, 0.86), rgba(22, 16, 12, 0.6));
+  border: 1px solid rgba(232, 201, 90, 0.24);
+  border-radius: var(--radius-panel);
+  color: var(--ui-text);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.2s;
+  animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.mode-card:nth-child(1) { animation-delay: 0.06s; }
+.mode-card:nth-child(2) { animation-delay: 0.12s; }
+.mode-card:nth-child(3) { animation-delay: 0.18s; }
+.mode-card:nth-child(4) { animation-delay: 0.24s; }
+.mode-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(232, 201, 90, 0.22) inset;
+}
+.mode-card:active { transform: translateY(0) scale(0.99); }
+.mode-card.featured {
+  padding: 18px 20px;
+  border-color: rgba(232, 201, 90, 0.5);
+  background: linear-gradient(115deg, rgba(43, 33, 26, 0.9), rgba(22, 16, 12, 0.68));
+}
+.mc-glyph {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px;
+  font-family: var(--font-display); font-size: 30px;
+  color: var(--vermilion);
+  background: var(--vermilion-soft);
+  border: 1px solid rgba(194, 58, 43, 0.45);
+  border-radius: var(--radius-seal);
+}
+.mode-card.featured .mc-glyph { width: 54px; height: 54px; font-size: 36px; }
+.mc-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.mc-title { font-family: var(--font-display); font-size: 22px; letter-spacing: 0.22em; color: var(--gold); line-height: 1.1; }
+.mode-card.featured .mc-title { font-size: 26px; }
+.mc-desc { font-size: 12px; color: var(--paper-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mc-hint { font-size: 10px; color: rgba(240, 230, 208, 0.36); font-family: var(--font-num); letter-spacing: 0.02em; }
+.mc-cta {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-display); font-size: 13px; letter-spacing: 0.14em;
+  color: var(--gold);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.mode-card:hover .mc-cta { opacity: 1; transform: translateX(0); }
+.mode-card .best {
+  position: absolute; top: 9px; right: 14px;
+  font-family: var(--font-num); font-size: 10px;
+  color: rgba(232, 201, 90, 0.55);
+}
+
+/* ---- 底部：画风 + 兵器廊 + 键位 ---- */
+.hub-bottom {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 14px 2px 20px;
+  animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+.hub-bottom-row { display: flex; align-items: center; gap: 20px; }
+.hairline-v { width: 1px; height: 34px; background: var(--gold-hairline); }
+
+.weapon-rail-wrap { flex: 1; min-width: 0; display: flex; align-items: center; gap: 14px; }
+.weapon-rail {
+  flex: 1; display: flex; gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(232, 201, 90, 0.4) transparent;
+}
+.weapon-chip {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  width: auto; min-width: 46px; height: 46px;
+  padding: 4px 8px;
+  font-family: var(--font-display); font-size: 18px; line-height: 1;
+  color: var(--ui-text);
+  background: rgba(22, 16, 12, 0.5);
+  border: 1px solid rgba(240, 230, 208, 0.18);
+  border-radius: var(--radius-seal);
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: transform 0.16s, border-color 0.16s, color 0.16s, box-shadow 0.16s;
+}
+.weapon-chip em { font-style: normal; font-size: 9px; letter-spacing: 0.02em; color: var(--paper-dim); }
+.weapon-chip:hover {
+  transform: translateY(-4px);
+  border-color: var(--vermilion);
+  color: var(--gold);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(194, 58, 43, 0.3) inset;
+}
+.weapon-chip:active { transform: translateY(-1px) scale(0.95); }
+
+/* 键位提示：kbd 标签，无圆点分隔 */
+.keys-hint { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 11px; color: var(--ui-dim); align-items: center; }
+.keys-hint kbd {
+  font-family: var(--font-num); font-size: 10px;
+  color: var(--paper);
+  background: rgba(22, 16, 12, 0.55);
+  border: 1px solid rgba(240, 230, 208, 0.22);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 4px;
+}
+.keys-hint span { white-space: nowrap; }
+
+/* ================= 覆盖层：暂停菜单 ================= */
+.overlay-menu {
+  position: absolute; inset: 0; z-index: 40;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at 50% 42%, rgba(20, 14, 10, 0.5), rgba(8, 5, 4, 0.78));
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.menu-card {
+  display: flex; flex-direction: column; gap: 12px;
+  min-width: 260px; padding: 28px 32px 22px;
+  background: linear-gradient(168deg, rgba(43, 33, 26, 0.96), rgba(22, 16, 12, 0.96));
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+  animation: rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.menu-seal {
+  margin: 0 auto;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px;
+  font-size: 20px; color: var(--paper);
+  background: var(--vermilion);
+  border-radius: var(--radius-seal);
+  box-shadow: inset 0 0 0 2px rgba(244, 236, 217, 0.35), 0 4px 12px rgba(194, 58, 43, 0.4);
+}
+.menu-card h2 {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 26px; letter-spacing: 0.4em;
+  color: var(--gold);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gold-hairline);
+}
+.menu-card .seal-btn {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 16px;
+  background: rgba(232, 201, 90, 0.06);
+  border-color: rgba(232, 201, 90, 0.32);
+}
+.menu-card .seal-btn:hover { background: var(--vermilion); border-color: var(--vermilion); color: var(--paper); transform: translateX(3px); }
+.menu-card .seal-btn[data-act="exit"] { border-color: rgba(194, 58, 43, 0.5); color: rgba(240, 230, 208, 0.85); }
+.menu-card .seal-btn[data-act="exit"]:hover { background: var(--vermilion-deep); }
+.menu-hint { text-align: center; font-size: 11px; color: var(--ui-dim); margin-top: 4px; font-family: var(--font-num); }
+
+/* ================= 覆盖层：帮助面板 ================= */
+.help-overlay { z-index: 45; }
+.help-card {
+  position: relative;
+  width: min(720px, 92vw);
+  max-height: 84vh;
+  overflow-y: auto;
+  padding: 30px 36px 26px;
+  background: linear-gradient(172deg, rgba(43, 33, 26, 0.98), rgba(20, 14, 10, 0.98));
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(232, 201, 90, 0.45) transparent;
+  animation: rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.help-close {
+  position: sticky; top: 0; float: right; z-index: 1;
+  cursor: pointer; padding: 6px 14px;
+  font-family: var(--font-display); font-size: 13px; letter-spacing: 0.1em;
+  color: var(--gold);
+  background: rgba(194, 58, 43, 0.16);
+  border: 1px solid rgba(194, 58, 43, 0.45);
+  border-radius: var(--radius-seal);
+}
+.help-close:hover { background: var(--vermilion); color: var(--paper); }
+.help-card h2 {
+  font-family: var(--font-display);
+  font-size: 27px; letter-spacing: 0.18em;
+  color: var(--gold);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gold-hairline);
+  margin-bottom: 20px;
+}
+.help-card section { margin: 20px 0; }
+.help-card h3 {
+  font-family: var(--font-display);
+  font-size: 16px; letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.help-card table.keys { width: 100%; border-collapse: collapse; font-size: 13px; }
+.help-card table.keys td { padding: 6px 10px; }
+.help-card table.keys tr + tr td { border-top: 1px solid rgba(232, 201, 90, 0.1); }
+.help-card table.keys td:first-child {
+  width: 42%; color: var(--paper);
+  font-family: var(--font-num); font-size: 12px;
+  background: rgba(232, 201, 90, 0.06);
+  border-radius: var(--radius-seal);
+}
+.help-card ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.9; color: var(--paper-dim); }
+.help-card ul li b { color: var(--gold); font-weight: 600; }
+.help-card .weapons {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.help-card .w-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 8px 10px;
+  background: rgba(244, 236, 217, 0.05);
+  border: 1px solid rgba(244, 236, 217, 0.12);
+  border-radius: var(--radius-seal);
+  font-size: 12px; line-height: 1.35;
+}
+.help-card .w-item .w-char {
+  font-family: var(--font-display);
+  font-size: 21px; color: var(--vermilion);
+  min-width: 22px; text-align: center;
+}
+.help-card .w-item b { color: var(--paper); font-weight: 600; }
+.help-card .w-item em { display: block; font-style: normal; color: rgba(232, 201, 90, 0.8); font-size: 10px; }
+.help-card .note { font-size: 12px; margin-top: 12px; line-height: 1.75; color: var(--paper-dim); }
+.help-card .note b { color: var(--gold); font-weight: 600; }
+.help-card .tips { list-style: none; padding-left: 0; }
+.help-card .tips li::before { content: "· "; color: var(--gold); }
+@media (max-width: 560px) { .help-card .weapons { grid-template-columns: repeat(2, 1fr); } }
+
+/* ================= 游戏内工具栏 ================= */
+.game-bar {
+  position: absolute; top: 14px; right: 14px; z-index: 30;
+  display: flex; gap: 8px;
+}
+.game-bar .seal-btn { min-width: 46px; padding: 8px 12px; font-size: 14px; }
+
+/* ================= 动效与可访问性 ================= */
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hub *, .hub, .menu-card, .help-card, .seal-btn, .mode-card, .weapon-chip {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* 窄屏：模式列收窄，顶栏换行 */
+@media (max-width: 900px) {
+  .hub { padding: 0 14px; }
+  .hub-mid { padding-left: 0; justify-content: center; }
+  .mode-list { width: 100%; max-width: 460px; }
+  .hub-top { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .hub-top-actions { flex-wrap: wrap; }
+  .style-row { border-right: none; padding-right: 0; }
+  .hub-bottom-row { flex-wrap: wrap; gap: 12px; }
+  .weapon-rail-wrap { width: 100%; }
+  .hairline-v { display: none; }
+}

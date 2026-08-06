@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+playwright-report/
+dist/
+.DS_Store
+*.log
+
+# AI 过程产物（brainstorming/writing-plans 的 spec/plan 等工作目录）
+docs/superpowers/

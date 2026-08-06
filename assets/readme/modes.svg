@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="270" viewBox="0 0 1200 270" role="img" aria-labelledby="t d">
+  <title id="t">四种玩法</title>
+  <desc id="d">闯关、跑酷、演示、对战四模式，共享同一内核。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1712"/><stop offset="1" stop-color="#130e0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="270" rx="22" fill="url(#bg)"/>
+  <text x="48" y="54" font-size="27" fill="#e8c95a" font-family="sans-serif">四种玩法 · 一个内核</text>
+  <g font-family="sans-serif" fill="#d9cdb4">
+    <g>
+      <rect x="48" y="80" width="258" height="150" rx="14" fill="#1a120d"/>
+      <rect x="66" y="98" width="46" height="46" rx="8" fill="#c23a2b"/>
+      <text x="89" y="130" font-size="28" fill="#f4ecd9" text-anchor="middle" font-family="sans-serif">战</text>
+      <text x="128" y="128" font-size="22" fill="#f4ecd9" font-family="sans-serif">闯关</text>
+      <text x="66" y="170" font-size="14" fill="#b6a381">横版清版 · 波次刷怪</text>
+      <text x="66" y="192" font-size="14" fill="#b6a381">三关一路杀到骑车邪龙</text>
+      <text x="66" y="216" font-size="13" fill="#8a7a5f">连击评分 · 招式落款</text>
+    </g>
+    <g>
+      <rect x="318" y="80" width="258" height="150" rx="14" fill="#1a120d"/>
+      <rect x="336" y="98" width="46" height="46" rx="8" fill="#f0a030"/>
+      <text x="359" y="130" font-size="28" fill="#241a14" text-anchor="middle" font-family="sans-serif">风</text>
+      <text x="398" y="128" font-size="22" fill="#f4ecd9" font-family="sans-serif">跑酷</text>
+      <text x="336" y="170" font-size="14" fill="#b6a381">无限里程 · 自动前进</text>
+      <text x="336" y="192" font-size="14" fill="#b6a381">跳障碍 · 空中特技连击</text>
+      <text x="336" y="216" font-size="13" fill="#8a7a5f">落地加分 · 速度爬升</text>
+    </g>
+    <g>
+      <rect x="588" y="80" width="258" height="150" rx="14" fill="#1a120d"/>
+      <rect x="606" y="98" width="46" height="46" rx="8" fill="#8ad17a"/>
+      <text x="629" y="130" font-size="28" fill="#241a14" text-anchor="middle" font-family="sans-serif">器</text>
+      <text x="668" y="128" font-size="22" fill="#f4ecd9" font-family="sans-serif">演示</text>
+      <text x="606" y="170" font-size="14" fill="#b6a381">十八般兵刃图鉴</text>
+      <text x="606" y="192" font-size="14" fill="#b6a381">逐件试耍 · 招式/手感/难度</text>
+      <text x="606" y="216" font-size="13" fill="#8a7a5f">木人陪练 · 永续试招</text>
+    </g>
+    <g>
+      <rect x="858" y="80" width="294" height="150" rx="14" fill="#1a120d"/>
+      <rect x="876" y="98" width="46" height="46" rx="8" fill="#7a3aff"/>
+      <text x="899" y="130" font-size="28" fill="#f4ecd9" text-anchor="middle" font-family="sans-serif">王</text>
+      <text x="938" y="128" font-size="22" fill="#f4ecd9" font-family="sans-serif">对战</text>
+      <text x="876" y="170" font-size="14" fill="#b6a381">竞技场对决骑车夜叉王</text>
+      <text x="876" y="192" font-size="14" fill="#b6a381">攻防克制 · 格挡反击</text>
+      <text x="876" y="216" font-size="13" fill="#8a7a5f">AI 对手 · 血条对决</text>
+    </g>
+  </g>
+</svg>

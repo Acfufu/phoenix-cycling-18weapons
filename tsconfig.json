@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "target": "ES2019",
+    "lib": ["ES2019", "DOM"],
+    "module": "preserve",
+    "strict": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "noUnusedLocals": false
+  },
+  "include": ["js/**/*.js", "js/**/*.d.ts"]
+}
